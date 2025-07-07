@@ -44,6 +44,30 @@ body {
   animation: transparencyAnimation ease-in-out 10s infinite;
 }
 
+@media screen and (max-width: 1024px) {
+  body {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 776px) {
+  body {
+    transform: scale(0.6);
+  }
+}
+
+@media screen and (max-width: 578px) {
+  body {
+    transform: scale(0.4);
+  }
+}
+
+@media screen and (max-width: 374px) {
+  body {
+    transform: scale(0.3);
+  }
+}
+
 .notebook {
   user-select: none;
 
