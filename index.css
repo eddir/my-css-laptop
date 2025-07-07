@@ -1,0 +1,269 @@
+@keyframes transparencyAnimation {
+  0% {
+    filter: brightness(100%)
+  }
+
+  60% {
+    filter: brightness(40%)
+  }
+
+  100% {
+    filter: brightness(100%)
+  }
+}
+
+@keyframes notebookAnimation {
+  0% {
+    transform: translate(-50%, -50%) perspective(1200px) translateZ(-1000px) rotateY(-15deg) rotateX(55deg);
+  }
+
+  60% {
+    transform: translate(-50%, -50%) perspective(1200px) translateZ(-1000px) rotateY(45deg) rotateX(55deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) perspective(1200px) translateZ(-1000px) rotateY(-15deg) rotateX(55deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(120deg, #333, #000);
+  animation: transparencyAnimation ease-in-out 10s infinite;
+}
+
+.notebook {
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(1200px) translateZ(-1000px);
+
+  animation: notebookAnimation ease-in-out 10s infinite;
+}
+
+.upper-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1062px;
+  height: 748px;
+
+  position: relative;
+
+  border-radius: 16px;
+  background-color: #123;
+
+  transform-origin: bottom;
+  transform: rotateX(-75deg)
+}
+
+.camera {
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  margin: 4px 0 8px 0;
+  border: 5px solid #234;
+
+  background-color: black;
+  border-radius: 50%;
+}
+
+.screen {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 32px);
+
+  background: linear-gradient(-45deg, #406, #336 100%);
+  color: white;
+  font-size: 72px;
+}
+
+.brand {
+  margin: 8px 0 32px 0;
+  color: #aaa
+}
+
+.lower-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+  width: fit-content;
+
+  position: relative;
+  padding: 110px 52px 52px 52px;
+
+  border-radius: 16px;
+  background-color: #ccc;
+
+  transform-style: preserve-3d;
+}
+
+.top-hover {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+  width: calc(100% - 200px);
+  height: 32px;
+
+  background-color: #123;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+  padding: 12px;
+
+  border: 1px solid #999;
+  border-radius: 16px;
+
+  transform-style: preserve-3d;
+  background-color: #bbb;
+}
+
+.keyboard__row {
+  display: flex;
+  gap: 4px;
+  transform-style: preserve-3d;
+}
+
+.keyboard__key {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px;
+
+  background-color: #123;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+
+  min-width: 51px;
+  height: 51px;
+
+  transform-style: preserve-3d;
+  transform: translateZ(5px);
+  transition: transform 0.2s;
+}
+
+.keyboard__key:active {
+  transform: translateZ(0)
+}
+
+.keyboard__key--w1 {
+  min-width: 36px;
+}
+
+.keyboard__key--w2 {
+  min-width: 48px;
+}
+
+.keyboard__key--w3 {
+  min-width: 67px;
+}
+
+.keyboard__key--w4 {
+  min-width: 80px;
+}
+
+.keyboard__key--w5 {
+  min-width: 110px;
+}
+
+.keyboard__key--w6 {
+  min-width: 272px;
+}
+
+.keyboard__key--h1 {
+  height: 24px;
+}
+
+.keyboard__key b {
+  font-weight: 400;
+}
+
+.keyboard__key--num-lock {
+  font-size: 8px;
+}
+
+.touchpad {
+  display: block;
+  width: 360px;
+  height: 210px;
+
+  border: 2px solid #999;
+
+  border-radius: 8px;
+
+  transform: translateX(-65px);
+}
+
+.ryzen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  height: 52px;
+
+  position: absolute;
+  right: 56px;
+  bottom: 240px;
+  padding-right: 4px;
+
+  border: 3px solid #f62;
+
+  background-color: black;
+}
+
+.ryzen__title {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  color: white;
+}
+
+.ryzen__subtitle {
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  color: white;
+}
+
+.ryzen__num {
+  align-self: flex-end;
+  display: block;
+  font-size: 11px;
+  font-weight: 900;
+  color: white;
+}
