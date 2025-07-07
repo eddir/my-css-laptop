@@ -1,11 +1,11 @@
 # My CSS Laptop
 
-My HONOR laptop created in HTML + CSS Only.
+Model of my HONOR laptop, built with **only HTML and CSS**.
 
-Also laptop has an interactive keyboard, you can tap or click on keys.
+The laptop also features an **interactive keyboard** — you can tap or click the keys.
 
 ![](.assets/preview.png)
 
-## Run
+## How to run
 
-Just open index.html in browser
+Just open **index.html** in your browser
